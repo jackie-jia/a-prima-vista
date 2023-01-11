@@ -34,11 +34,6 @@ def get_classical_period_options():
 def get_filtered_pieces():
     data = request.get_json()
     filter_request = FilterRequest(data["filters"])
-
-    # sample_data = {"12 Cantatas, D-Dl Mus.1-I-7 (Various)": {"title": "12 Cantatas, D-Dl Mus.1-I-7", "composer": "Various", "imslp_link": "https://imslp.org/wiki/12_Cantatas,_D-Dl_Mus.1-I-7_(Various)", "style": "Baroque", "instrumentation": ["voice, continuo", "No.1: soprano, 2 violins, viola, viola da gamba, continuo", "No.9: voice, flute, continuo"]},
-    # "12 Capriccios and Exercises, Op.15 (Lindley, Robert)": {"title": "12 Capriccios and Exercises, Op.15", "composer": "Lindley, Robert", "imslp_link": "https://imslp.org/wiki/12_Capriccios_and_Exercises,_Op.15_(Lindley,_Robert)", "style": "Classical", "instrumentation": ["cello", "violin"]}}
-    # filtered = filter(lambda entry: filter_pieces(entry, filter_request), sample_data.values())
-
     filtered = filter(lambda entry: filter_pieces(entry, filter_request), pieces.values())
 
     result = []
@@ -48,13 +43,14 @@ def get_filtered_pieces():
 
 def matches_instruments(requested, instrumentation):
     for r in requested:
+        # search for singular and plural version of instrument string
         if not re.search(r'\b' + r + r'\b', instrumentation, re.IGNORECASE)\
             and not re.search(r'\b' + engine.plural(r) + r'\b', instrumentation, re.IGNORECASE):
             return False
     return True
 
 def filter_pieces(entry, filter_request):
-    belongs_to_period, contains_instruments = False, False
+    belongs_to_period = False
     period_filters, instr_filters = filter_request.periods, filter_request.instruments
 
     if "style" in entry:
@@ -64,9 +60,8 @@ def filter_pieces(entry, filter_request):
         return False
 
     if "instrumentation" in entry and any((matches_instruments(instr_filters, instrumentation) for instrumentation in entry["instrumentation"])):
-        contains_instruments = True
-    
-    return contains_instruments
-            
+        return True
+
+    return False            
 if __name__ == "__main__":
     app.run(debug=True)

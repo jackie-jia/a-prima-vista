@@ -2,26 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
-def process_batch_data(base_url, offset, data):
-    url = base_url + str(offset)
-    request = requests.get(url).json()
-
-    for r in request:
-        if r != "metadata":
-            entry = request[r]
-            print(entry["permlink"])
-            data[entry["id"]] = {"title": entry["intvals"]["worktitle"],
-                        "composer": entry["intvals"]["composer"],
-                        "imslp_link": entry["permlink"]}
-        
-        # scrape the piece-specific link for more information
-        imslp_soup = BeautifulSoup(requests.get(entry["permlink"]).content, 'html.parser')
-        scrape_piece_info(imslp_soup, data, entry["id"])
-
-    return request
-
 """
-scrape and load one batch of 1000 pieces into file
+Scrape and load one batch of 1000 pieces into file
 """
 def process_batch_data(base_url, offset):
     url = base_url + str(offset)
@@ -31,7 +13,6 @@ def process_batch_data(base_url, offset):
     for r in request:
         if r != "metadata":
             entry = request[r]
-            # print(entry["permlink"])
             temp[entry["id"]] = {"title": entry["intvals"]["worktitle"],
                         "composer": entry["intvals"]["composer"],
                         "imslp_link": entry["permlink"]}
@@ -47,6 +28,9 @@ def process_batch_data(base_url, offset):
 
     return request
 
+"""
+Scrape style and instrumentation data points from IMSLP page
+"""
 def scrape_piece_info(soup, data, id):
     # scrape instrumentation and style
     table = soup.find("div", "wi_body")

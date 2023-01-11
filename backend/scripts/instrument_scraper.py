@@ -4,7 +4,7 @@ import json
 import inflect
 
 """
-scraping musical instruments
+Scrape list of musical instruments as a baseline for unique instruments dataset
 https://www.allthemusicalinstrumentsoftheworld.com/
 """
 engine = inflect.engine()
@@ -13,7 +13,7 @@ soup = BeautifulSoup(requests.get(url).content, 'html.parser')
 div = soup.find('div', 'col1div')
 tables = div.find_all('table')
 inst = {"instruments": []}
-# print(tables)
+
 for t in tables:
     instruments = t.find_all("div", attrs={'style':"float:left;text-align:center;height:210px;width:180px;"})
     for i in instruments:
