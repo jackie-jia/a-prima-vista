@@ -1,8 +1,8 @@
 button.MuiButtonBase-root.MuiPaginationItem-root.MuiPaginationItem-sizeMedium.MuiPaginationItem-text.MuiPaginationItem-circular.MuiPaginationItem-textPrimary.Mui-selected.MuiPaginationItem-page.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root {
-    background-color: #31386c;
-    outline: none;
+    background-color: #31386c !important;
+    outline: none !important;
 }
 
 button.MuiButtonBase-root.MuiPaginationItem-root.MuiPaginationItem-sizeMedium.MuiPaginationItem-text.MuiPaginationItem-circular.MuiPaginationItem-textPrimary.MuiPaginationItem-previousNext.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root {
-    outline: none;
+    outline: none !important;
 }
