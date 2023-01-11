@@ -37,7 +37,7 @@ export default function SearchBar(props) {
         const filters = createFilters();
         const config = {
           method: 'post',
-          url: 'http://aprimavista.pythonanywhere.com/pieces/filter',
+          url: 'https://aprimavista.pythonanywhere.com/pieces/filter',
           headers: { 
             'Content-Type': 'application/json'
           },
