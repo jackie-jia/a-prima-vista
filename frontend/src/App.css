@@ -4,7 +4,6 @@
 }
 
 .main {
-  /* padding-bottom: 32vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,7 +56,6 @@
 }
 
 .search-div > div {
-  /* height: 40%; */
   width: 25%;
 }
 

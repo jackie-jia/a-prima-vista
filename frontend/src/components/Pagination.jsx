@@ -2,8 +2,7 @@ import {Box} from '@mui/material';
 import Pagination from '@mui/material/Pagination';
 import './css/Pagination.css'
 
-
-
+/* */
 export default function ResultPagination(props) {
 
     const handlePageChange = (event, page) => {

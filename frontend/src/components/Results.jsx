@@ -5,13 +5,13 @@ import ResultPagination from "./Pagination";
 
 export default function Results(props) {
     const [pageNumber, setPageNumber] = useState(0);
-    console.log("page: " + pageNumber);
-    useEffect(() => {
-        setPageNumber(0);
-    }, [props.pieces])
     const piecesPerPage = 10;
     const from = pageNumber * piecesPerPage;
     const pageCount = Math.ceil(props.pieces.length / piecesPerPage);
+
+    useEffect(() => {
+        setPageNumber(0);
+    }, [props.pieces])
 
     const paginatedData = props.pieces.slice(from, from + piecesPerPage).map((piece, index) => (
         <Piece key={index} 
