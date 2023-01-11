@@ -1,0 +1,24 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    position: relative;
+    padding-top: 30vh;
+}
+
+.footer-text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.3vw;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.violin {
+    margin-left: 0.5vw;
+    min-height: 5.5vh;
+}

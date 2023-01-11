@@ -1,0 +1,24 @@
+.results-container {
+    background-color: white;
+    border-radius: 20px;
+    width: 70%;
+    margin: auto;
+    margin-top: 10%;
+    padding-top: 5%;
+}
+
+.results-container h1 {
+    font-family: Roboto serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    padding-left: 5%;
+}
+
+.results {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3vw;
+}

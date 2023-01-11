@@ -1,0 +1,173 @@
+.app {
+  background-color: #F6F8FC;
+  min-height: 100vh;
+}
+
+.main {
+  /* padding-bottom: 32vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro-div {
+  position:relative;
+  padding-top: 8% !important;
+  width: 70%;
+  margin: auto;
+  overflow-wrap: break-word;
+
+}
+
+.main-text {
+  font-family: Roboto Serif;
+  font-size: 4.2rem;
+  font-weight: 500;
+  line-height: 7rem;
+  text-align: left;
+}
+
+#logo {
+  font-weight: 600;
+  font-style: italic;
+  text-shadow: 5px 2px 6px rgba(218, 159, 62, 0.4);
+  background-image: url('../public/images/music.svg');
+  background-position: 10% 10%;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+#filler-word {
+  font-family: Roboto Serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.6rem;
+  display:flex;
+  align-items: center;
+  padding-top: 0.5vh;
+}
+
+/* styling for dropdowns */
+.search-div {
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  gap: 2vw;
+  margin-top: 7vh;
+}
+
+.search-div > div {
+  /* height: 40%; */
+  width: 25%;
+}
+
+.multiselect-container {
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.search-wrapper {
+  border: none;
+}
+
+::placeholder {
+  color: rgb(194, 191, 191);
+}
+
+.searchBox {
+  font-family: Roboto;
+  font-style: normal;
+  font-size: 1.5rem;
+  width: 100%;
+  height: 6vh;
+  padding-left: 1vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.chip {
+  background: #31386c;
+  box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin-left: 1vw;
+  margin-top: 1vh;
+  font-size: 1.7vw;
+  padding: 1.2vh 1.25vw 1.5vh 1.25vw;
+}
+
+.optionListContainer.displayBlock {
+  border-radius: 20px;
+}
+
+.multiSelectContainer ul {
+  border-radius: 20px;
+  border-width: 0.25px;
+}
+
+li.option {
+  font-family: Roboto;
+  font-style: normal;
+}
+
+li.option:hover {
+  background-color: #31386c;
+}
+
+.search-button-spinner {
+  width: 7vw !important;
+}
+
+.go-button {
+  width: 7vw;
+  background: #DA9F3E;
+  color: white;
+  border: none;
+  box-shadow: 4px 4px 7px 1px rgba(218, 159, 62, 0.3);
+  border-radius: 30px;
+  font-family: Roboto Serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.2rem;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  transition: 0.3s ease-in-out;
+}
+
+.go-button:hover {
+  background: #d68b13;
+  box-shadow: 4px 4px 7px 3px rgba(218, 159, 62, 0.3);
+}
+
+#spinner {
+  height: 7.5vh;
+  margin-top: -2%;
+}
+
+.info-button {
+  background: white;
+  border-color: black;
+  width: 2vw;
+  height: 2vw;
+  border-radius: 30px;
+  font-family: Roboto Serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -1vw;
+  margin-top: 0.75vh;
+  position: relative;
+}
+
+.extra-info {
+  display: none;
+  transition: 0.3s ease-in-out;
+}
+
+.info:hover .extra-info {
+  display: block;
+}
