@@ -86,17 +86,17 @@
 }
 
 .chip {
-  background: #31386c;
+  background: #31386c !important;
   box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   margin-left: 1vw;
   margin-top: 1vh;
-  font-size: 1.7vw;
-  padding: 1.2vh 1.25vw 1.5vh 1.25vw;
+  font-size: 1.7vw !important;
+  padding: 1.2vh 1.25vw 1.5vh 1.25vw !important;
 }
 
 .optionListContainer.displayBlock {
-  border-radius: 20px;
+  border-radius: 20px !important;
 }
 
 .multiSelectContainer ul {
@@ -110,7 +110,7 @@ li.option {
 }
 
 li.option:hover {
-  background-color: #31386c;
+  background-color: #31386c !important;
 }
 
 .search-button-spinner {
