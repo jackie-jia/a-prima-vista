@@ -1,6 +1,4 @@
 import json
-import nltk
-from nltk.corpus import stopwords
 import re
 import inflect
 
@@ -10,7 +8,6 @@ limit = 1000
 engine = inflect.engine()
 unique_instruments = set()
 unique_styles = set()
-stopword = stopwords.words('english')
 
 with open("../data/instruments.json", "r") as read_content:
     ref_instruments = json.load(read_content)['instruments']
