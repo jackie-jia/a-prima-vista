@@ -88,7 +88,7 @@
 .chip {
   background: #31386c !important;
   box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
+  border-radius: 20px !important;
   margin-left: 1vw;
   margin-top: 1vh;
   font-size: 1.7vw !important;
@@ -100,8 +100,8 @@
 }
 
 .multiSelectContainer ul {
-  border-radius: 20px;
-  border-width: 0.25px;
+  border-radius: 20px !important;
+  border-width: 0.25px !important;
 }
 
 li.option {
